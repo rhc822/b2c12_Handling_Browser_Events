@@ -1,33 +1,30 @@
-// // Practice: Mirror, Mirror in the Code
+/* Practice: Mirror, Mirror in the Code
 
-// // The learning objective for this exercise is to listen for the keyup event, and update the DOM when it is broadcast.
+The learning objective for this exercise is to listen for the keyup event, andupdate the DOM when it is broadcast.
 
-// // Create an input field in your DOM. Give it an id of message.
+Create an input field in your DOM. Give it an id of message. */
 
-// const inputField = () => `Mirror your message here <input id="message" type="text"><br>`;
-// const inputFieldContainer = document.querySelector("#messageContainer");
-// inputFieldContainer.innerHTML = inputField();
+const inputFieldContainer = document.querySelector("#messageContainer"); //Get the ID messageContainer on the DOM and set it equal to the inputFieldContainer variable.
+inputFieldContainer.innerHTML = `Mirror your message here <input id="message" type="text"><br>` //set the HTML in inputFieldContainer to the listed string.
 
-// // Create two article elements with unique id values. Use Flexbox to display them in a row, each taking 50% of the width of the browser.
+// NOTE: innerHTML requires a string!
 
-// const articleElements = () => {
-//     return `<article id=leftArticle>Placeholder text</article>
-//     <article id=rightArticle>Placeholder text</article>`
-//     };
-// const articlesFieldContainer = document.querySelector("#articles");
-// articlesFieldContainer.innerHTML = articleElements();
-// console.log(articlesFieldContainer);
+/* Create two article elements with unique id values. Use Flexbox to display them in a row, each taking 50% of the width of the browser. */
 
-// // Give each article a different border color.
-// // Write an event listener that listens for the keyup event on the input field.
+const articlesFieldContainer = document.querySelector("#articles"); //Get the articles ID on the DOM and set it equal to articlesFieldContainer.
+articlesFieldContainer.innerHTML = `
+    <article id=leftArticle>Placeholder text</article>
+    <article id=rightArticle>Placeholder text</article>`; //Add the backtick text into #articles
 
-// document.getElementById("message").addEventListener("keyup", function(){
-//     document.querySelector("#leftArticle").innerHTML = event.target.value;
-// })
+/* Give each article a different border color. 
 
-// // Listens to the content that is entered into inputFieldContainer and, when the user releases pressing the key, .... 
+(See CSS file)
 
-// // The event handler function should update the textContent property of both sections.
-// // event listener for keyup
+Write an event listener that listens for the keyup event on the input field and listens to the content that is entered into inputFieldContainer.
 
-console.log("You can do this today!")
+When the user releases pressing the key, The event handler function should update the textContent property of both sections. */
+
+document.querySelector("#message").addEventListener("keyup", function(){
+    document.querySelector("#leftArticle").innerHTML = event.target.value;
+    document.querySelector("#rightArticle").innerHTML = event.target.value;
+})
